@@ -1,0 +1,285 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Grenze Gotisch', cursive;
+    /* font-family: 'Rubik', sans-serif; */
+}
+
+
+#Container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    padding: 1px;
+}
+
+
+#hm {
+    margin-top: 10px;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+
+#menu {
+    display: flex;
+}
+
+
+#btn-mobile {
+    display: none;
+}
+
+
+li, a {
+    list-style: none;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+
+    transition-property:background-color, padding;
+    transition-duration: 500ms;
+}
+
+
+li:hover {
+    background-color: rgb(223, 223, 223);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+@media (max-width: 600px) {
+
+    
+    #menu {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 38px;
+        right: 0px;
+        background: rgb(235, 235, 235);
+        transition: .6s;
+        z-index: 1000;
+        text-align: center;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    li {
+        padding: 10px;
+        margin-bottom: 10px;
+        border-bottom: 2px solid rgba(0, 0, 0, .12);
+    }
+    
+    #nav.active #menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+    
+    #btn-mobile {
+        display: flex;
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        border: none;
+        background: none;
+        cursor: pointer;
+        gap: .5rem;
+    }
+    
+    #hamburguer {
+        border-top: 2px solid;
+        width: 20px;
+    }
+
+    #hamburguer::after,  #hamburguer::before{
+        content: "";
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: currentColor;
+        margin-top: 5px;
+        transition: .3s;
+        position: relative;
+    }
+
+    #nav.active #hamburguer {
+        border-top-color: transparent;
+    }
+
+    #nav.active #hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    #nav.active #hamburguer::after {
+        transform: rotate(-135deg);
+        top: -7px;
+    }
+}
+
+
+/*SECTION*/
+
+.ow {
+    margin-top: 45px;
+}
+
+
+#wall {
+   margin: auto;
+   width: 1000px;
+   max-width: 900px;
+   height: 500px;
+   max-height: 800px;
+
+   position: relative;
+}
+
+
+#wall img {
+    opacity: 0;
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+    
+    object-fit: cover;
+
+    transition: opacity 800ms;
+}
+
+
+#wall img.selected {
+    opacity: 1;
+}
+
+/*SECTION 2*/
+
+
+.sb {
+    text-align: center;
+}
+
+
+h3 {
+    margin-top: 50px;
+    margin-left: 205px;
+    border-bottom: 1px solid #000;
+}
+
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+.flex > div {
+    flex: 1 1 200px;
+    margin: 30px;
+}
+
+
+.image {
+    cursor: pointer;
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    display: block;
+    border: 1px solid #000;
+
+}
+
+
+.ant {
+    transition-property: padding;
+    transition-duration: 300ms;
+}
+
+
+.ant:hover {
+    padding: 8px;
+}
+
+
+@media (max-width: 600px) {
+
+    .ow {
+        display: none;
+    }
+
+    h3 {
+       display: none;
+    }
+
+}
+
+/*FOOTER*/
+
+
+.foot {
+    width: 100%;
+    height: 10%;
+    padding-bottom: 10px;
+    background-color: rgb(223, 223, 223);
+    position: absolute;
+}
+
+.oot {
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px;
+}
+
+.lst, .txt {
+    display: flex;
+    justify-content: space-between;
+    justify-content: center;
+    z-index: 9999; margin-top: -10px;
+}
+
+h2 {
+   text-align: center;
+   padding: 10px;
+}
+
+@media (max-width: 600px) {
+
+    .foot {
+        width: 100%;
+        height: 10%;
+    }
+
+    /* .logs {
+        margin-bottom: 20px;
+    }
+    
+    h2 {
+        display: inline;
+        margin-left: 10px;
+    }
+
+    .lst, .txt {
+        display: inline;
+        z-index: 9999; margin-top: -10px;
+    }
+
+    .ls {
+        font-size: 18px;
+        z-index: 9999; margin-top: -10px;
+    } */
+
+}
